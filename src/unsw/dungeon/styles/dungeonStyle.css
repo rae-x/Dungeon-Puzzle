@@ -1,0 +1,35 @@
+#status-panel {
+    -fx-background-color: lightgrey;
+    -fx-pref-height: 800;
+    -fx-pref-width: 350;
+}
+
+#dungeon-screen {
+    -fx-background-color: black;
+    -fx-pref-height: 800;
+    -fx-pref-width: 800;
+}
+
+#cleared-dungeon-screen {
+    -fx-pref-height: 800;
+    -fx-pref-width: 800;
+}
+
+#cleared-game-screen {
+    -fx-pref-height: 800;
+    -fx-pref-width: 800;
+}
+
+#help-screen {
+    -fx-pref-height: 800;
+    -fx-pref-width: 800;
+}
+
+#tasks-list {
+    -fx-font-size: 14px;
+}
+
+#main-menu {
+    -fx-pref-height: 800;
+    -fx-pref-width: 1150;
+}

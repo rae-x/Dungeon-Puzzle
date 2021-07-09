@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<HBox fx:id="rootHbox" stylesheets="@styles/dungeonStyle.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <VBox id="dungeon-screen" fx:id="dungeonVbox" alignment="CENTER">
+         <children>
+            <GridPane fx:id="dungeonGrid" alignment="CENTER" onKeyPressed="#handleKeyPress">
+               <columnConstraints>
+                  <ColumnConstraints />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints />
+               </rowConstraints>
+               <children>
+
+   </children>
+            </GridPane>
+         </children>
+      </VBox>
+      <VBox id="cleared-dungeon-screen" fx:id="clearedVbox" alignment="CENTER" prefHeight="200.0" prefWidth="100.0" visible="false">
+         <children>
+            <Text fx:id="clearedTxt" strokeType="OUTSIDE" strokeWidth="0.0" text="You cleared the dungeon!">
+               <font>
+                  <Font size="30.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </VBox.margin>
+            </Text>
+            <Button fx:id="nextStageBtn" mnemonicParsing="false" onAction="#handleNextStage" text="Next Stage">
+               <VBox.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </VBox.margin>
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Button>
+         </children>
+      </VBox>
+      <VBox id="cleared-game-screen" fx:id="gameClearedVbox" alignment="CENTER" prefHeight="200.0" prefWidth="100.0" visible="false">
+         <children>
+            <Text fx:id="clearedGameTxt" strokeType="OUTSIDE" strokeWidth="0.0" text="Congrats! You've completed all dungeons.">
+               <font>
+                  <Font size="30.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </VBox.margin>
+            </Text>
+            <Button fx:id="playAgainBtn" mnemonicParsing="false" onAction="#handlePlayAgain" text="Play Again">
+               <VBox.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </VBox.margin>
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Button>
+         </children>
+      </VBox>
+      <VBox id="help-screen" fx:id="helpVbox" alignment="CENTER" layoutX="1610.0" layoutY="10.0" prefHeight="200.0" prefWidth="100.0" visible="false">
+         <children>
+            <VBox prefHeight="200.0" prefWidth="100.0">
+               <children>
+                  <Label text="Arrow Keys - move character in the direction pressed" wrapText="true">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets bottom="10.0" left="20.0" right="20.0" top="10.0" />
+                     </VBox.margin>
+                  </Label>
+                  <Label text="A - attack with a sword when equipped with a sword (the sword will strike around the character)" wrapText="true">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets bottom="10.0" left="20.0" right="20.0" top="10.0" />
+                     </VBox.margin>
+                  </Label>
+                  <Label layoutX="20.0" layoutY="61.0" text="R - restart the current dungeon" wrapText="true">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets bottom="10.0" left="20.0" right="20.0" top="10.0" />
+                     </VBox.margin>
+                  </Label>
+                  <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="100.0">
+                     <children>
+                        <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../images/brilliant_blue_new.png" />
+                           </image>
+                        </ImageView>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Grants invincibility for 10 moves">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets left="25.0" />
+                           </HBox.margin>
+                        </Text>
+                     </children>
+                     <VBox.margin>
+                        <Insets left="10.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="100.0">
+                     <children>
+                        <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../images/bubbly.png" />
+                           </image>
+                        </ImageView>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Fully restores the player's health">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets left="25.0" />
+                           </HBox.margin>
+                        </Text>
+                     </children>
+                     <VBox.margin>
+                        <Insets left="10.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="100.0">
+                     <children>
+                        <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../images/greatsword_1_new.png" />
+                           </image>
+                        </ImageView>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Gives the player a sword that can defeat enemies in 1 strike">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets left="25.0" />
+                           </HBox.margin>
+                        </Text>
+                     </children>
+                     <VBox.margin>
+                        <Insets left="10.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="100.0">
+                     <children>
+                        <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../images/key.png" />
+                           </image>
+                        </ImageView>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Used to unlock doors">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets left="25.0" />
+                           </HBox.margin>
+                        </Text>
+                     </children>
+                     <VBox.margin>
+                        <Insets left="10.0" />
+                     </VBox.margin>
+                  </HBox>
+               </children>
+            </VBox>
+            <Button fx:id="returnToGameBtn" mnemonicParsing="false" onAction="#handleReturnToGame" text="Return to Game">
+               <VBox.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </VBox.margin>
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Button>
+         </children>
+      </VBox>
+      <VBox id="status-panel" fx:id="statusVbox" alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0">
+         <children>
+            <Text fx:id="stageTxt" strokeType="OUTSIDE" strokeWidth="0.0" text="Stage 1">
+               <font>
+                  <Font size="30.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </VBox.margin>
+            </Text>
+            <Text fx:id="healthTxt" strokeType="OUTSIDE" strokeWidth="0.0" text="Health: 5">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Text>
+            <Text fx:id="tasksTxt" strokeType="OUTSIDE" strokeWidth="0.0" text="Tasks">
+               <font>
+                  <Font size="20.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </VBox.margin>
+            </Text>
+            <VBox id="tasks-list" fx:id="tasksVbox" prefHeight="200.0" prefWidth="100.0">
+               <VBox.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="5.0" />
+               </VBox.margin>
+            </VBox>
+            <Text fx:id="equipsTxt" layoutX="153.0" layoutY="94.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Equipment">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Text>
+            <VBox id="tasks-list" fx:id="equipsVbox" alignment="TOP_CENTER" layoutX="20.0" layoutY="114.0" prefHeight="200.0" prefWidth="100.0">
+               <VBox.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </VBox.margin>
+               <children>
+                  <HBox fx:id="swordVbox" alignment="CENTER" prefHeight="50.0" prefWidth="100.0" visible="false">
+                     <children>
+                        <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../images/greatsword_1_new.png" />
+                           </image>
+                        </ImageView>
+                        <Text fx:id="swordUsesTxt" strokeType="OUTSIDE" strokeWidth="0.0" text="0 uses left">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets left="20.0" right="20.0" />
+                           </HBox.margin>
+                        </Text>
+                     </children>
+                     <VBox.margin>
+                        <Insets bottom="5.0" left="50.0" right="50.0" top="5.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox fx:id="potionVbox" alignment="CENTER" layoutX="60.0" layoutY="10.0" prefHeight="50.0" prefWidth="100.0" visible="false">
+                     <children>
+                        <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../images/brilliant_blue_new.png" />
+                           </image>
+                        </ImageView>
+                        <Text fx:id="potionTxt" strokeType="OUTSIDE" strokeWidth="0.0" text="0 moves left">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets left="20.0" right="20.0" />
+                           </HBox.margin>
+                        </Text>
+                     </children>
+                     <VBox.margin>
+                        <Insets bottom="5.0" left="50.0" right="50.0" top="5.0" />
+                     </VBox.margin>
+                  </HBox>
+               </children>
+            </VBox>
+            <Button fx:id="helpBtn" mnemonicParsing="false" onAction="#handleHelp" text="Help">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Button>
+            <Button fx:id="returnBtn" layoutX="156.0" layoutY="592.0" mnemonicParsing="false" onAction="#handleMainMenu" text="Return to Main Menu">
+               <font>
+                  <Font size="16.0" />
+               </font>
+               <VBox.margin>
+                  <Insets top="50.0" />
+               </VBox.margin>
+            </Button>
+         </children>
+      </VBox>
+   </children>
+</HBox>
